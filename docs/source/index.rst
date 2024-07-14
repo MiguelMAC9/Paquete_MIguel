@@ -21,17 +21,11 @@ Caracteristicas
    Extensibilidad: Los usuarios pueden extender el paquete añadiendo sus propios algoritmos y funcionalidades.
 
 
-
-Puedes instalar este paquete utilizando pip:
-
-.. code-block:: console
-   $ pip install -i https://test.pypi.org/simple/ Paquete-Mike==0.0.1
-
-
 Contents
 --------
 
 .. toctree::
-   Funciones
    Instalacion
+   Funciones
+   Algoritmos
 

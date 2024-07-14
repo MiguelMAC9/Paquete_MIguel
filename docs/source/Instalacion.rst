@@ -3,9 +3,6 @@ Instalacion
 
 .. _installation:
 
-Instalacion
-------------
-
 Puedes instalar este paquete utilizando pip:
 
 .. code-block:: console
