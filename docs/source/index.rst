@@ -18,7 +18,6 @@ Caracteristicas
 
 Instalación
 -----------
-
 Puedes instalar este paquete utilizando pip:
 
 .. code-block:: console
@@ -26,9 +25,6 @@ Puedes instalar este paquete utilizando pip:
 
 
 
-.. note::
-
-   This project is under active development.
 
 Contents
 --------
