@@ -34,8 +34,5 @@ Contents
 --------
 
 .. toctree::
-
    Funciones
-   usage
-   api
-Lumache hosts its documentation on Read the Docs.
+
