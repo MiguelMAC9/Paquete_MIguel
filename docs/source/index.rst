@@ -21,10 +21,7 @@ Caracteristicas
    Extensibilidad: Los usuarios pueden extender el paquete añadiendo sus propios algoritmos y funcionalidades.
 
 
-.. _installation:
 
-Instalación
------------
 Puedes instalar este paquete utilizando pip:
 
 .. code-block:: console
@@ -36,4 +33,5 @@ Contents
 
 .. toctree::
    Funciones
+   Instalacion
 
