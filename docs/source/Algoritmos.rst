@@ -1,8 +1,6 @@
 ==========
 Algoritmos
 ==========
-Multivariables
-==============
 
 Este documento describe varios algoritmos de optimización implementados en Python. A continuación se presentan los algoritmos, junto con una explicación de su funcionamiento y los requisitos para su uso.
 
@@ -308,11 +306,6 @@ Método de Newton
    - `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
    - `M`: Número máximo de iteraciones.
 
-==========
-Univariables
-==========
-
-Este documento describe varios algoritmos de optimización implementados en Python. A continuación se presentan los algoritmos, junto con una explicación de su funcionamiento y los requisitos para su uso.
 
 Método de División de Intervalos por la Mitad
 =============================================
