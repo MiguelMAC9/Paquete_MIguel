@@ -21,8 +21,8 @@ Instalación
 
 Puedes instalar este paquete utilizando pip:
 
-.. code-block:: python
-   "pip install -i https://test.pypi.org/simple/ Paquete-Mike==0.0.1"
+.. code-block:: console
+   pip install -i https://test.pypi.org/simple/ Paquete-Mike==0.0.1
 
 
 
@@ -35,6 +35,7 @@ Contents
 
 .. toctree::
 
+   Funciones
    usage
    api
 Lumache hosts its documentation on Read the Docs.
