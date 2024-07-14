@@ -26,10 +26,10 @@ Random Walk
 **Descripción**: Este algoritmo realiza un paseo aleatorio en dos dimensiones, comenzando desde una posición inicial y dando un número especificado de pasos aleatorios en la dirección x e y. Los incrementos en cada dirección son valores aleatorios generados a partir de una distribución gaussiana.
 
 **Requisitos**:
-- `n_steps`: Número de pasos a realizar.
-- `initial_position`: Posición inicial (x, y).
-- `mu`: Media de la distribución gaussiana (por defecto 0).
-- `sigma`: Desviación estándar de la distribución gaussiana (por defecto 1).
+   - `n_steps`: Número de pasos a realizar.
+   - `initial_position`: Posición inicial (x, y).
+   - `mu`: Media de la distribución gaussiana (por defecto 0).
+   - `sigma`: Desviación estándar de la distribución gaussiana (por defecto 1).
 
 Nelder-Mead Simplex
 ===================
@@ -82,11 +82,11 @@ Nelder-Mead Simplex
 **Descripción**: El método Nelder-Mead Simplex es un algoritmo de optimización sin derivadas que utiliza un simplex (un polígono de n+1 vértices en n dimensiones) para buscar el mínimo de una función. El simplex se ajusta mediante operaciones de reflexión, expansión y contracción para moverse hacia el mínimo de la función.
 
 **Requisitos**:
-- `funcion`: Función objetivo a minimizar.
-- `x0`: Vector inicial.
-- `tol`: Tolerancia para la convergencia.
-- `iteraciones`: Número máximo de iteraciones.
-- `alpha`, `beta`, `gamma`: Parámetros del algoritmo para reflexión, contracción y expansión.
+   - `funcion`: Función objetivo a minimizar.
+   - `x0`: Vector inicial.
+   - `tol`: Tolerancia para la convergencia.
+   - `iteraciones`: Número máximo de iteraciones.
+   - `alpha`, `beta`, `gamma`: Parámetros del algoritmo para reflexión, contracción y expansión.
 
 Hooke-Jeeves
 ============
@@ -129,13 +129,13 @@ Hooke-Jeeves
 **Descripción**: El método Hooke-Jeeves es un algoritmo de optimización sin derivadas que realiza una búsqueda de patrones. Se mueve en la dirección de la mejora y ajusta el tamaño del paso hasta que se encuentra un mínimo local.
 
 **Requisitos**:
-- `x_i`: Vector inicial.
-- `delta`: Tamaño inicial del paso.
-- `alpha`: Factor de reducción del tamaño del paso.
-- `e`: Tolerancia para la convergencia.
-- `n_iter`: Número máximo de iteraciones.
-- `funcion`: Función objetivo a minimizar.
-- `limite`: Límite en las variables.
+   - `x_i`: Vector inicial.
+   - `delta`: Tamaño inicial del paso.
+   - `alpha`: Factor de reducción del tamaño del paso.
+   - `e`: Tolerancia para la convergencia.
+   - `n_iter`: Número máximo de iteraciones.
+   - `funcion`: Función objetivo a minimizar.
+   - `limite`: Límite en las variables.
 
 Cauchy
 ======
@@ -183,11 +183,11 @@ Cauchy
 **Descripción**: El método de Cauchy es un algoritmo de optimización que utiliza el gradiente de la función objetivo para buscar el mínimo. La dirección de descenso se determina a partir del gradiente y se ajusta el tamaño del paso utilizando un optimizador univariable.
 
 **Requisitos**:
-- `funcion`: Función objetivo a minimizar.
-- `x0`: Vector inicial.
-- `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
-- `M`: Número máximo de iteraciones.
-- `optimizador_univariable`: Método de optimización para determinar el tamaño del paso.
+   - `funcion`: Función objetivo a minimizar.
+   - `x0`: Vector inicial.
+   - `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
+   - `M`: Número máximo de iteraciones.
+   - `optimizador_univariable`: Método de optimización para determinar el tamaño del paso.
 
 Método de Fletcher-Reeves
 =========================
@@ -237,11 +237,11 @@ Método de Fletcher-Reeves
 **Descripción**: El método de Fletcher-Reeves es un algoritmo de optimización basado en gradientes, que pertenece a la familia de métodos de conjugado gradiente. Utiliza la dirección del gradiente y una actualización conjugada para encontrar el mínimo de la función objetivo.
 
 **Requisitos**:
-- `funcion`: Función objetivo a minimizar.
-- `x0`: Vector inicial.
-- `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
-- `M`: Número máximo de iteraciones.
-- `optimizador_univariable`: Método de optimización para determinar el tamaño del paso.
+   - `funcion`: Función objetivo a minimizar.
+   - `x0`: Vector inicial.
+   - `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
+   - `M`: Número máximo de iteraciones.
+   - `optimizador_univariable`: Método de optimización para determinar el tamaño del paso.
 
 Método de Newton
 ================
@@ -301,8 +301,8 @@ Método de Newton
 **Descripción**: El método de Newton es un algoritmo de optimización basado en derivadas, que utiliza la información del gradiente y la matriz hessiana de la función objetivo para encontrar el mínimo. Este método es conocido por su rápida convergencia cerca de un mínimo.
 
 **Requisitos**:
-- `funcion`: Función objetivo a minimizar.
-- `x0`: Vector inicial.
-- `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
-- `M`: Número máximo de iteraciones.
+   - `funcion`: Función objetivo a minimizar.
+   - `x0`: Vector inicial.
+   - `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
+   - `M`: Número máximo de iteraciones.
 
