@@ -1,6 +1,8 @@
 ==========
 Algoritmos
 ==========
+Multivariables
+==============
 
 Este documento describe varios algoritmos de optimización implementados en Python. A continuación se presentan los algoritmos, junto con una explicación de su funcionamiento y los requisitos para su uso.
 
@@ -306,3 +308,220 @@ Método de Newton
    - `epsilon1`, `epsilon2`: Tolerancias para la convergencia.
    - `M`: Número máximo de iteraciones.
 
+==========
+Univariables
+==========
+
+Este documento describe varios algoritmos de optimización implementados en Python. A continuación se presentan los algoritmos, junto con una explicación de su funcionamiento y los requisitos para su uso.
+
+Método de División de Intervalos por la Mitad
+=============================================
+
+**Función**: `bisection_method`
+
+.. code-block:: python
+
+    import math
+
+    def bisection_method(f, a, b, tol=1e-6, max_iter=1000):
+        if f(a) * f(b) >= 0:
+            raise ValueError("La función no cambia de signo en el intervalo dado [a, b].")
+
+        left = a
+        right = b
+
+        for i in range(max_iter):
+            midpoint = (left + right) / 2.0
+            f_mid = f(midpoint)
+
+            if abs(f_mid) < tol:
+                print(f'Convergencia alcanzada en {i+1} iteraciones')
+                return midpoint
+
+            if f(left) * f_mid < 0:
+                right = midpoint
+            else:
+                left = midpoint
+
+        raise ValueError(f'El método de bisección no converge después de {max_iter} iteraciones.')
+
+**Descripción**: El método de bisección es un algoritmo de búsqueda de raíces que divide repetidamente un intervalo por la mitad y selecciona el subintervalo que contiene la raíz. Se repite este proceso hasta que se alcanza una tolerancia especificada o el número máximo de iteraciones.
+
+**Requisitos**:
+- `f`: Función objetivo para la cual se busca la raíz.
+- `a`, `b`: Extremos del intervalo inicial.
+- `tol`: Tolerancia para la convergencia.
+- `max_iter`: Número máximo de iteraciones.
+
+Búsqueda de Fibonacci
+=====================
+
+**Función**: `fibonacci_search`
+
+.. code-block:: python
+
+    def fibonacci_search(f, a, b, n, tol=1e-6):
+        fib = [0, 1]
+        for i in range(2, n+1):
+            fib.append(fib[i-1] + fib[i-2])
+
+        L = b - a
+
+        for k in range(1, n):
+            x1 = a + (fib[n-k-1] / fib[n-k+1]) * L
+            x2 = a + (fib[n-k] / fib[n-k+1]) * L
+            fx1 = f(x1)
+            fx2 = f(x2)
+
+            if fx1 < fx2:
+                b = x2
+            else:
+                a = x1
+
+            L = b - a
+
+            if L < tol:
+                return (a + b) / 2
+
+        return (a + b) / 2
+
+**Descripción**: La búsqueda de Fibonacci es un método de optimización que utiliza números de Fibonacci para reducir el intervalo de búsqueda y encontrar el mínimo de una función unimodal en un intervalo cerrado.
+
+**Requisitos**:
+- `f`: Función objetivo a minimizar.
+- `a`, `b`: Extremos del intervalo inicial.
+- `n`: Número de iteraciones basadas en la secuencia de Fibonacci.
+- `tol`: Tolerancia para la convergencia.
+
+Método de la Sección Dorada
+===========================
+
+**Función**: `golden_section_search`
+
+.. code-block:: python
+
+    def golden_section_search(f, a, b, tol=1e-6):
+        phi = (math.sqrt(5) - 1) / 2
+        x1 = a + (1 - phi) * (b - a)
+        x2 = a + phi * (b - a)
+        fx1 = f(x1)
+        fx2 = f(x2)
+
+        while abs(b - a) > tol:
+            if fx1 < fx2:
+                b = x2
+                x2 = x1
+                fx2 = fx1
+                x1 = a + (1 - phi) * (b - a)
+                fx1 = f(x1)
+            else:
+                a = x1
+                x1 = x2
+                fx1 = fx2
+                x2 = a + phi * (b - a)
+                fx2 = f(x2)
+
+        return (a + b) / 2
+
+**Descripción**: El método de la sección dorada es un algoritmo de búsqueda que utiliza la proporción áurea para encontrar el mínimo de una función unimodal dentro de un intervalo cerrado, reduciendo sistemáticamente el intervalo de búsqueda.
+
+**Requisitos**:
+- `f`: Función objetivo a minimizar.
+- `a`, `b`: Extremos del intervalo inicial.
+- `tol`: Tolerancia para la convergencia.
+
+Método de Newton-Raphson
+========================
+
+**Función**: `newton_raphson`
+
+.. code-block:: python
+
+    def newton_raphson(f, df, x0, tol=1e-6, max_iter=1000):
+        x = x0
+        for i in range(max_iter):
+            fx = f(x)
+            if abs(fx) < tol:
+                print(f'Convergencia alcanzada en {i+1} iteraciones')
+                return x
+            dfx = df(x)
+            if dfx == 0:
+                raise ValueError("Derivada de la función es cero. No se puede continuar.")
+            x = x - fx / dfx
+        raise ValueError(f'El método de Newton-Raphson no converge después de {max_iter} iteraciones.')
+
+**Descripción**: El método de Newton-Raphson es un algoritmo de búsqueda de raíces que utiliza derivadas para aproximar la raíz de una función. Se basa en iterar una fórmula que converge cuadráticamente hacia la raíz.
+
+**Requisitos**:
+- `f`: Función objetivo para la cual se busca la raíz.
+- `df`: Derivada de la función objetivo.
+- `x0`: Valor inicial.
+- `tol`: Tolerancia para la convergencia.
+- `max_iter`: Número máximo de iteraciones.
+
+Método de la Secante
+====================
+
+**Función**: `secant_method`
+
+.. code-block:: python
+
+    def secant_method(f, x0, x1, tol=1e-6, max_iter=1000):
+        fx0 = f(x0)
+        fx1 = f(x1)
+
+        for i in range(max_iter):
+            if abs(fx1) < tol:
+                print(f'Convergencia alcanzada en {i+1} iteraciones')
+                return x1
+
+            x_next = x1 - fx1 * (x1 - x0) / (fx1 - fx0)
+
+            x0 = x1
+            x1 = x_next
+            fx0 = fx1
+            fx1 = f(x_next)
+
+        raise ValueError(f'El método de la secante no converge después de {max_iter} iteraciones.')
+
+**Descripción**: El método de la secante es un algoritmo de búsqueda de raíces que utiliza dos aproximaciones iniciales y no requiere el cálculo de derivadas. Es una versión modificada del método de Newton-Raphson.
+
+**Requisitos**:
+- `f`: Función objetivo para la cual se busca la raíz.
+- `x0`, `x1`: Aproximaciones iniciales.
+- `tol`: Tolerancia para la convergencia.
+- `max_iter`: Número máximo de iteraciones.
+
+Método de Bisección
+===================
+
+**Función**: `bisection`
+
+.. code-block:: python
+
+    def bisection(f, a, b, tol=1e-6, max_iter=1000):
+        if f(a) * f(b) >= 0:
+            raise ValueError("La función no cambia de signo en el intervalo dado.")
+
+        for i in range(max_iter):
+            c = (a + b) / 2.0
+            fc = f(c)
+
+            if abs(fc) < tol:
+                print(f'Convergencia alcanzada en {i+1} iteraciones')
+                return c
+
+            if f(a) * fc < 0:
+                b = c
+            else:
+                a = c
+
+        raise ValueError(f'El método de bisección no converge después de {max_iter} iteraciones.')
+
+**Descripción**: El método de bisección es un algoritmo de búsqueda de raíces que divide repetidamente un intervalo por la mitad y selecciona el subintervalo que contiene la raíz. Se repite este proceso hasta que se alcanza una tolerancia especificada o el número máximo de iteraciones.
+
+**Requisitos**:
+- `f`: Función objetivo para la cual se busca la raíz.
+- `a`, `b`: Extremos del intervalo inicial.
+- `tol`: Tolerancia para la convergencia.
+- `max_iter`: Número máximo de iteraciones.
