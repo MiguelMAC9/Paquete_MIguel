@@ -3,9 +3,6 @@ Funciones
 
 Este documento describe varias funciones matemáticas utilizadas en optimización y otros campos. A continuación se presentan las implementaciones y descripciones detalladas de cada función.
 
-Funciones
----------
-
 .. code-block:: python
 
     import math

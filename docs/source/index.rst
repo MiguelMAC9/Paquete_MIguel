@@ -10,11 +10,14 @@ problemas de optimización en diferentes dominios.
 Caracteristicas
 ----------------
 
-   Algoritmos de Optimización: Este paquete incluye una amplia gama de algoritmos de optimización, incluyendo algoritmos de optimización global y local.
-   Interfaz Intuitiva: La API de este paquete está diseñada para ser sencilla y fácil de usar, permitiendo a los usuarios definir y resolver problemas de optimización con pocas líneas de código.
-   Soporte para Funciones Personalizadas: Los usuarios pueden definir sus propias funciones objetivo y restricciones.
-   Visualización: Herramientas integradas para la visualización de los resultados de la optimización y del progreso del algoritmo.
-   Extensibilidad: Los usuarios pueden extender el paquete añadiendo sus propios algoritmos y funcionalidades.
+   - Algoritmos de Optimización: Este paquete incluye una amplia gama de algoritmos de optimización, incluyendo algoritmos de optimización global y local.
+   - Interfaz Intuitiva: La API de este paquete está diseñada para ser sencilla y fácil de usar, permitiendo a los usuarios definir y resolver problemas de optimización con pocas líneas de código.
+   - Soporte para Funciones Personalizadas: Los usuarios pueden definir sus propias funciones objetivo y restricciones.
+   - Visualización: Herramientas integradas para la visualización de los resultados de la optimización y del progreso del algoritmo.
+   - Extensibilidad: Los usuarios pueden extender el paquete añadiendo sus propios algoritmos y funcionalidades.
+
+
+.. _installation:
 
 Instalación
 -----------

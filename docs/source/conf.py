@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'Paquete Opti'
+project = 'Paquete Optimizacion Mike'
 copyright = '2024, Miguel'
 author = 'Miguel Alvarez'
 
